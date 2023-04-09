@@ -1,5 +1,6 @@
 :root {
   --main-font: Roboto, sans-serif;
+
   --main-txt-color: #434455;
   --address-color: #434455;
   --link-color: #2e2f42;
@@ -14,23 +15,77 @@
   --logo-dark: #2e2f42;
   --title-txt: #2e2f42;
   --hero-txt: #ffffff;
+
+  --indent: 24px;
+  --item: 4;
+  --indent-quantity: 3;
 }
 
+/* reset start */
 .link {
   text-decoration: none;
 }
 
 .list {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+/* reset end */
+
 .btn {
+  display: block;
+
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
   cursor: pointer;
+  border-radius: 4px;
+}
+
+.container {
+  width: 1158px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  outline: 2px solid red;
+  outline-offset: -2px;
+}
+
+.section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.card-set {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.card-set-item {
+  flex-basis: calc(
+    (100% - var(--indent) * var(--indent-quantity)) / var(--item)
+  );
 }
 
 /* body */
@@ -50,6 +105,7 @@ body {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--logo-color);
+  margin-right: 76px;
 }
 
 .logo-dark {
@@ -61,17 +117,39 @@ body {
 }
 
 /* header */
+.header-container {
+  display: flex;
+  align-items: center;
+}
+
+.header-nav {
+  display: flex;
+  margin-right: auto;
+  align-items: center;
+}
+
+.header-list {
+  display: flex;
+  gap: 40px;
+}
+
 .header-link {
+  display: block;
   font-weight: 500;
   letter-spacing: 0.02em;
   color: var(--link-color);
   line-height: 1.5;
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 .address-link {
+  display: block;
   letter-spacing: 0.02em;
   color: var(--address-color);
   line-height: 1.5;
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 .address {
@@ -87,6 +165,8 @@ body {
 
 /* hero */
 .hero-section {
+  padding-top: 188px;
+  padding-bottom: 188px;
   background-color: #2e2f42;
 }
 
@@ -97,11 +177,21 @@ body {
   text-align: center;
   letter-spacing: 0.02em;
   color: var(--hero-txt);
+
+  margin-bottom: 48px;
 }
 
 .hero-btn {
+  padding: 16px 32px;
+  min-width: 169px;
+  min-height: 56px;
+  margin-left: auto;
+  margin-right: auto;
+
   color: var(--light-btn-txt);
   background-color: var(--hero-btn);
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .hero-btn:hover,
@@ -111,6 +201,7 @@ body {
 
 /* section */
 .section-title {
+  margin-bottom: 72px;
   font-size: 36px;
   line-height: 1.11;
   text-align: center;
@@ -120,6 +211,8 @@ body {
 }
 
 .title {
+  margin-bottom: 8px;
+
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
@@ -133,7 +226,13 @@ body {
   letter-spacing: 0.02em;
 }
 
-/* team */
+/* Gallery section */
+.gallery-item {
+  --item: 3;
+  --indent-quantity: 2;
+}
+
+/* Team */
 .section-team {
   background-color: #f4f4fd;
 }
@@ -143,16 +242,43 @@ body {
   background-color: #ffffff;
 }
 
+.team-wrapper {
+  padding: 32px 48px;
+}
+
+/* Footer */
 .footer {
+  padding-top: 100px;
+  padding-bottom: 100px;
   background-color: #2e2f42;
 }
 
 .footer-text {
+  display: block;
+  padding-top: 16px;
+  width: 264px;
+
   line-height: 1.5;
   color: var(--light-txt);
 }
 
+/* Portfolio page */
+.portfolio-section {
+  padding-top: 96px;
+  padding-bottom: 120px;
+}
+
+.portfotio-menu {
+  display: flex;
+  gap: 24px;
+  margin-left: 271px;
+  margin-right: auto;
+  margin-bottom: 72px;
+}
+
 .portfolio-btn {
+  border: 1px solid #e7e9fc;
+  padding: 12px 24px;
   color: var(--dark-btn-txt);
   background-color: var(--btn-background);
 }
@@ -161,10 +287,22 @@ body {
 .portfolio-btn:focus {
   color: var(--light-btn-txt);
   background-color: var(--btn-hover);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.portfolio-item {
+  --item: 3;
+  --indent-quantity: 2;
 }
 
 .portfolio-descr {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--main-txt-color);
+}
+
+.portfolio-wrapper {
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
