@@ -15,6 +15,7 @@
   --logo-dark: #2e2f42;
   --title-txt: #2e2f42;
   --hero-txt: #ffffff;
+  --border-color: #e7e9fc;
 
   --indent: 24px;
   --item: 4;
@@ -51,6 +52,8 @@ img {
 
 .btn {
   display: block;
+  border: 1px solid transparent;
+  border-radius: 4px;
 
   font-family: inherit;
   font-weight: 500;
@@ -58,7 +61,6 @@ img {
   line-height: 1.5;
   letter-spacing: 0.04em;
   cursor: pointer;
-  border-radius: 4px;
 }
 
 .container {
@@ -78,6 +80,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
+  row-gap: 48px;
 }
 
 .card-set-item {
@@ -96,6 +99,8 @@ body {
 
 /* Logo */
 .logo {
+  display: inline-block;
+  margin-bottom: 16px;
   margin-right: 76px;
 
   font-family: "Raleway", sans-serif;
@@ -116,6 +121,10 @@ body {
 }
 
 /* header */
+.header {
+  border-bottom: 1px solid var(--border-color);
+}
+
 .header-container {
   display: flex;
   align-items: center;
@@ -170,6 +179,10 @@ body {
 }
 
 .hero-title {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 48px;
+
   font-weight: 700;
   font-size: 56px;
   line-height: 1.07;
@@ -177,13 +190,13 @@ body {
   letter-spacing: 0.02em;
   color: var(--hero-txt);
 
-  margin-bottom: 48px;
+  max-width: 496px;
 }
 
 .hero-btn {
   padding: 16px 32px;
   min-width: 169px;
-  min-height: 56px;
+  height: 56px;
   margin-left: auto;
   margin-right: auto;
 
@@ -191,6 +204,7 @@ body {
   background-color: var(--hero-btn);
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: none;
 }
 
 .hero-btn:hover,
@@ -242,7 +256,10 @@ body {
 }
 
 .team-wrapper {
-  padding: 32px 48px;
+  padding: 32px 16px;
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 /* Footer */
@@ -254,8 +271,7 @@ body {
 
 .footer-text {
   display: block;
-  padding-top: 16px;
-  width: 264px;
+  max-width: 264px;
 
   line-height: 1.5;
   color: var(--light-txt);
@@ -269,14 +285,13 @@ body {
 
 .portfotio-menu {
   display: flex;
+  justify-content: center;
   gap: 24px;
-  margin-left: 271px;
-  margin-right: auto;
   margin-bottom: 72px;
 }
 
 .portfolio-btn {
-  border: 1px solid #e7e9fc;
+  border-color: var(--border-color);
   padding: 12px 24px;
   color: var(--dark-btn-txt);
   background-color: var(--btn-background);
@@ -286,6 +301,7 @@ body {
 .portfolio-btn:focus {
   color: var(--light-btn-txt);
   background-color: var(--btn-hover);
+  border: 1px solid transparent;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
@@ -303,6 +319,6 @@ body {
 
 .portfolio-wrapper {
   padding: 32px 16px;
-  border: 1px solid #e7e9fc;
+  border: 1px solid var(--border-color);
   border-top: none;
 }
