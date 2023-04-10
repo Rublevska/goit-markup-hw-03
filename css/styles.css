@@ -236,11 +236,11 @@ body {
   letter-spacing: 0.02em;
 }
 
-.feature-section {
-  padding-top: 120px;
+/* Gallery section */
+.gallery-section {
+  padding-bottom: 120px;
 }
 
-/* Gallery section */
 .gallery-item {
   --item: 3;
   --indent-quantity: 2;
